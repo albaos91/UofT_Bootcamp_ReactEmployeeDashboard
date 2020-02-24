@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { getUsers, assignRandomDepartment, assignRole } from '../utils';
+import React from 'react';
+import { assignRandomDepartment, assignRole } from '../utils';
 import User from './User';
 
-export default function TableBody() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    getUsers().then(users => {
-      setUsers(users);
-    });
-  }, []);
-
+export default function TableBody({ filteredUsers }) {
   return (
     <React.Fragment>
       <tbody>
-        {users.map(user => {
+        {filteredUsers.map(user => {
           user.department = assignRandomDepartment();
           user.role = assignRole(user.department);
           return (

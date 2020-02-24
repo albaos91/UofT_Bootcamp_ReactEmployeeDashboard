@@ -1,7 +1,7 @@
 import React from 'react';
 import TableBody from './TableBody';
 
-export default function Table() {
+export default function Table(props) {
   return (
     <div className='datatable mt-5'>
       <table id='table' className='table table-condensed'>
@@ -21,7 +21,7 @@ export default function Table() {
             </th>
           </tr>
         </thead>
-        <TableBody />
+        <TableBody filteredUsers={props.filteredUsers} />
       </table>
     </div>
   );
