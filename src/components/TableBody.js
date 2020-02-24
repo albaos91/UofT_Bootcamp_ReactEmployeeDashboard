@@ -29,6 +29,23 @@ export default function TableBody() {
     return departments[Math.floor(Math.random() * departments.length)];
   };
 
+  const assignRole = department => {
+    switch (department) {
+      case 'Engineering':
+        return 'Software Engineer';
+      case 'Accounting':
+        return 'Accountant';
+      case 'Sales':
+        return 'Sales Consultant';
+      case 'Marketing':
+        return 'Communication Manager';
+      case 'Finance':
+        return 'Actuary';
+      default:
+        return 'Product Designer';
+    }
+  };
+
   useEffect(() => {
     getUsers().then(users => {
       setUsers(users);
@@ -40,9 +57,14 @@ export default function TableBody() {
       <tbody>
         {users.map(user => {
           user.department = assignRandomDepartment();
+          user.role = assignRole(user.department);
           return (
             <tr key={user.id}>
-              <td>{user.name}</td>
+              <td>
+                <span className='font-weight-bold'>{user.name}</span>
+                <br />
+                <span className='font-italic'>{user.role}</span>
+              </td>
               <td>{user.department}</td>
               <td>{user.email}</td>
               <td>{user.phone}</td>
