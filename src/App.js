@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import Form from './components/Form';
+import Search from './components/Search';
 import Main from './components/Main';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <div className='container mt-5'>
         <Header />
-        <Form />
+        <Search />
         <Main />
       </div>
     </div>

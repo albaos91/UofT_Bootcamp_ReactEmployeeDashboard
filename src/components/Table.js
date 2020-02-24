@@ -16,7 +16,6 @@ export default function Table() {
             <th scope='col'>Phone</th>
           </tr>
         </thead>
-
         <TableBody />
       </table>
     </div>
