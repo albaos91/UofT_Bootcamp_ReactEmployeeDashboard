@@ -1,0 +1,21 @@
+.App {
+  color: #666666;
+}
+
+.btn-primary {
+  background-color: #5af !important;
+}
+
+.btn-primary:hover {
+  background-color: #08f !important;
+}
+
+.btn-outline-primary {
+  color: #5af !important;
+  border-color: #5af !important;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #08f !important;
+}
