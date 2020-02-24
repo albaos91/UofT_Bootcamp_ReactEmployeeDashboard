@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import Form from './components/Form';
 import Header from './components/Header';
+import Form from './components/Form';
+import Main from './components/Main';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <div className='container mt-5'>
         <Header />
         <Form />
+        <Main />
       </div>
     </div>
   );
