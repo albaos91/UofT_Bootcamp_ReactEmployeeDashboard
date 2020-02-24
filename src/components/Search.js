@@ -16,6 +16,7 @@ export default function Form() {
         <div className='form-group col-md-4'>
           <label htmlFor='department'>Department</label>
           <select className='form-control' id='department'>
+            <option>All</option>
             <option>Engineering</option>
             <option>Accounting</option>
             <option>Sales</option>

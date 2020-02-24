@@ -19,3 +19,8 @@
   color: #fff !important;
   background-color: #08f !important;
 }
+
+table tbody tr:hover {
+  cursor: pointer;
+  border: 2px #dee2e6 solid;
+}

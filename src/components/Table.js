@@ -4,7 +4,7 @@ import TableBody from './TableBody';
 export default function Table() {
   return (
     <div className='datatable mt-5'>
-      <table id='table' className='table table-hover table-condensed'>
+      <table id='table' className='table table-condensed'>
         <thead>
           <tr>
             <th scope='col' style={{ width: '35%' }}>
