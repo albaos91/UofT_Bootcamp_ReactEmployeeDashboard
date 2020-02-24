@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Search from './components/Search';
 import Main from './components/Main';
+import AdvanceFilter from './components/AdvanceFilter';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className='container mt-5'>
         <Header />
         <Search />
+        <AdvanceFilter />
         <Main />
       </div>
     </div>

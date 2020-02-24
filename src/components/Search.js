@@ -6,7 +6,12 @@ export default function Form() {
       <div className='form-row'>
         <div className='form-group col-md-4 offset-md-1'>
           <label htmlFor='name'>Name</label>
-          <input type='text' className='form-control' id='name' />
+          <input
+            type='text'
+            className='form-control'
+            id='name'
+            placeholder='Type in a name ..'
+          />
         </div>
         <div className='form-group col-md-4'>
           <label htmlFor='department'>Department</label>
