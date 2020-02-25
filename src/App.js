@@ -20,8 +20,15 @@ function App() {
   }, [users]);
 
   const handleSearch = (name, department) => {
-    console.log(name);
-    console.log(department);
+    const searchResults = users.filter(user => {
+      if (
+        user.department.toLowerCase() === department.toLowerCase() &&
+        user.name.toLowerCase().includes(name.toLowerCase())
+      ) {
+        return user;
+      }
+    });
+    setFilteredUsers(searchResults);
   };
 
   return (
