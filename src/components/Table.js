@@ -21,7 +21,7 @@ export default function Table(props) {
             </th>
           </tr>
         </thead>
-        <TableBody filteredUsers={props.filteredUsers} />
+        <TableBody users={props.users} />
       </table>
     </div>
   );

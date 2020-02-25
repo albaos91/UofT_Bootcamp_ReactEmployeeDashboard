@@ -24,3 +24,12 @@ table tbody tr:hover {
   cursor: pointer;
   border: 2px #dee2e6 solid;
 }
+
+#list-icon,
+#grid-icon {
+  padding: 5px;
+}
+
+svg {
+  pointer-events: none;
+}

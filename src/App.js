@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Search from './components/Search';
 import Table from './components/Table';
 import AdvanceFilter from './components/AdvanceFilter';
+import Grid from './components/Grid';
 import {
   getUsers,
   searchEmployeeByName,
@@ -27,6 +28,8 @@ function App() {
     console.log('I run');
     setFilteredUsers(users);
   }, [users]);
+
+  const [layout, setLayout] = useState('list');
 
   const handleSearch = (name, department) => {
     let searchResults = null;
@@ -71,6 +74,10 @@ function App() {
     }
   };
 
+  const handleLayoutSelect = layout => {
+    setLayout(layout);
+  };
+
   return (
     <div className='App'>
       <div className='container mt-5'>
@@ -80,9 +87,13 @@ function App() {
           handleInputChange={handleInputChange}
           handleSortSelect={handleSortSelect}
           handleFilterSelect={handleFilterSelect}
+          handleLayoutSelect={handleLayoutSelect}
         />
-        {/* <Main /> */}
-        <Table filteredUsers={filteredUsers} />
+        {layout === 'grid' ? (
+          <Grid users={filteredUsers} />
+        ) : (
+          <Table users={filteredUsers} />
+        )}
       </div>
     </div>
   );

@@ -33,6 +33,21 @@ export default function AdvanceFilter(props) {
     }
   };
 
+  const onLayoutSelect = e => {
+    let layout;
+    for (const className of e.target.classList) {
+      if (className === 'list-layout' || className === 'fa-bars') {
+        layout = 'list';
+      }
+      if (className === 'grid-layout' || className === 'fa-th-large') {
+        layout = 'grid';
+      }
+    }
+    if (props.handleLayoutSelect) {
+      props.handleLayoutSelect(layout);
+    }
+  };
+
   return (
     <div className='advance-filter mt-5'>
       <h5 className='my-5 text-center'>Advance Filter</h5>
@@ -86,13 +101,32 @@ export default function AdvanceFilter(props) {
               </select>
             </div>
           </div>
-          <div className='col-1 ml-3'>
-            <span className='mr-2' style={{ fontSize: 27 }}>
+          <div className='col ml-3'>
+            <button
+              type='button'
+              className='btn list-layout'
+              onClick={e => onLayoutSelect(e)}
+            >
+              <i className='fas fa-bars' style={{ fontSize: 24 }}></i>
+            </button>
+            <button
+              type='button'
+              className='btn grid-layout'
+              onClick={e => onLayoutSelect(e)}
+            >
+              <i className='fas fa-th-large' style={{ fontSize: 24 }}></i>
+            </button>
+            {/* <span
+              id='list-icon'
+              className='mr-2'
+              style={{ fontSize: 27 }}
+              onClick={e => handleLayoutSelect(e)}
+            >
               <i className='fas fa-bars'></i>
             </span>
-            <span>
+            <span id='grid-icon'>
               <i className='fas fa-th-large' style={{ fontSize: 27 }}></i>
-            </span>
+            </span> */}
           </div>
         </div>
       </form>
