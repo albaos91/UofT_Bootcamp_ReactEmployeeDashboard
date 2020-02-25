@@ -66,10 +66,19 @@ const searchEmpByNameAndDepartment = (
   });
 };
 
+const sortBySelection = (employeeList, selection) => {
+  return [...employeeList].sort((a, b) => {
+    const selectionA = a[selection].toLowerCase();
+    const selectionB = b[selection].toLowerCase();
+    return selectionA > selectionB ? 1 : selectionA < selectionB ? -1 : 0;
+  });
+};
+
 export {
   getUsers,
   assignRandomDepartment,
   assignRole,
   searchEmployeeByName,
-  searchEmpByNameAndDepartment
+  searchEmpByNameAndDepartment,
+  sortBySelection
 };

@@ -7,7 +7,8 @@ import AdvanceFilter from './components/AdvanceFilter';
 import {
   getUsers,
   searchEmployeeByName,
-  searchEmpByNameAndDepartment
+  searchEmpByNameAndDepartment,
+  sortBySelection
 } from './utils';
 
 function App() {
@@ -55,6 +56,9 @@ function App() {
             return nameA > nameB ? 1 : nameA < nameB ? -1 : 0;
           })
         );
+        break;
+      case 'Department':
+        setFilteredUsers(sortBySelection(filteredUsers, 'department'));
         break;
       default:
         setFilteredUsers(users);
