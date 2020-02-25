@@ -45,11 +45,15 @@ function App() {
     setFilteredUsers(searchResults);
   };
 
+  const handleFormClear = () => {
+    setFilteredUsers(users);
+  };
+
   return (
     <div className='App'>
       <div className='container mt-5'>
         <Header />
-        <Search handleSearch={handleSearch} />
+        <Search handleSearch={handleSearch} handleFormClear={handleFormClear} />
         <AdvanceFilter />
         {/* <Main /> */}
         <Table filteredUsers={filteredUsers} />
