@@ -70,7 +70,7 @@ export default function Form(props) {
         {!searching ? (
           <div className='form-group col-md-2 d-flex align-items-end'>
             <button className='btn btn-primary btn-block'>
-              Filter
+              Search
               <span className='ml-3'>
                 <i className='fas fa-search'></i>
               </span>
@@ -79,7 +79,7 @@ export default function Form(props) {
         ) : (
           <div className='form-group col-md-4 d-flex align-items-end'>
             <button className='btn btn-primary btn-block'>
-              Filter
+              Search
               <span className='ml-3'>
                 <i className='fas fa-search'></i>
               </span>

@@ -74,11 +74,18 @@ const sortBySelection = (employeeList, selection) => {
   });
 };
 
+const filterBySelection = (employeeList, label, selection) => {
+  return employeeList.filter(emp => {
+    return emp[label.toLowerCase()] === selection;
+  });
+};
+
 export {
   getUsers,
   assignRandomDepartment,
   assignRole,
   searchEmployeeByName,
   searchEmpByNameAndDepartment,
-  sortBySelection
+  sortBySelection,
+  filterBySelection
 };

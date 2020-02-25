@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 export default function AdvanceFilter(props) {
   const [query, setQuery] = useState();
   const [sortType, setSortType] = useState();
+  const [filterLabel, setFilterLabel] = useState();
+  const [filterType, setFilterType] = useState();
 
   const onInputChange = e => {
     setSortType('Please Select');
@@ -20,12 +22,23 @@ export default function AdvanceFilter(props) {
     }
   };
 
+  const onFilterSelect = e => {
+    setFilterType(e.target.value);
+    setFilterLabel(e.target.options[e.target.selectedIndex].parentNode.label);
+    if (props.handleFilterSelect) {
+      props.handleFilterSelect(
+        e.target.options[e.target.selectedIndex].parentNode.label,
+        e.target.value
+      );
+    }
+  };
+
   return (
-    <div className='advance-filter ml-4 mt-5'>
+    <div className='advance-filter mt-5'>
       <h5 className='my-5 text-center'>Advance Filter</h5>
       <form>
         <div className='form-row'>
-          <div className='offset-1 col-5 mr-5'>
+          <div className='offset-1 col-4 mr-2'>
             <input
               type='text'
               className='form-control'
@@ -38,7 +51,7 @@ export default function AdvanceFilter(props) {
             <label htmlFor='sortBy' className='col-form-label'>
               Sort by:
             </label>
-            <div className='col'>
+            <div className='col mr-2'>
               <select
                 className='form-control'
                 id='sortBy'
@@ -51,7 +64,29 @@ export default function AdvanceFilter(props) {
               </select>
             </div>
           </div>
-          <div className='col-1 ml-4'>
+          <div className='form-row'>
+            <label htmlFor='filterBy' className='col-form-label'>
+              Filter by:
+            </label>
+            <div className='col'>
+              <select
+                className='form-control'
+                id='filterBy'
+                value={filterType}
+                onChange={e => onFilterSelect(e)}
+              >
+                <option>Please Select</option>
+                <optgroup label='Department'>
+                  <option value='Accounting'>Accounting</option>
+                  <option value='Design'>Design</option>
+                  <option value='Engineering'>Engineering</option>
+                  <option value='Marketing'>Marketing</option>
+                  <option value='Sales'>Sales</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div className='col-1 ml-3'>
             <span className='mr-2' style={{ fontSize: 27 }}>
               <i className='fas fa-bars'></i>
             </span>

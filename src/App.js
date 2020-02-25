@@ -8,7 +8,8 @@ import {
   getUsers,
   searchEmployeeByName,
   searchEmpByNameAndDepartment,
-  sortBySelection
+  sortBySelection,
+  filterBySelection
 } from './utils';
 
 function App() {
@@ -49,13 +50,7 @@ function App() {
   const handleSortSelect = sortType => {
     switch (sortType) {
       case 'Alphabetical':
-        setFilteredUsers(
-          [...filteredUsers].sort((a, b) => {
-            const nameA = a.name.toLowerCase();
-            const nameB = b.name.toLowerCase();
-            return nameA > nameB ? 1 : nameA < nameB ? -1 : 0;
-          })
-        );
+        setFilteredUsers(sortBySelection(filteredUsers, 'name'));
         break;
       case 'Department':
         setFilteredUsers(sortBySelection(filteredUsers, 'department'));
@@ -63,6 +58,16 @@ function App() {
       default:
         setFilteredUsers(users);
         break;
+    }
+  };
+
+  const handleFilterSelect = (filterLabel, filterType) => {
+    console.log(filterLabel);
+    console.log(filterType);
+    if (filterType === 'Please Select') {
+      setFilteredUsers(users);
+    } else {
+      setFilteredUsers(filterBySelection(users, filterLabel, filterType));
     }
   };
 
@@ -74,6 +79,7 @@ function App() {
         <AdvanceFilter
           handleInputChange={handleInputChange}
           handleSortSelect={handleSortSelect}
+          handleFilterSelect={handleFilterSelect}
         />
         {/* <Main /> */}
         <Table filteredUsers={filteredUsers} />
