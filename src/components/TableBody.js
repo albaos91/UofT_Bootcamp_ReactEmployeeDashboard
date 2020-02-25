@@ -7,8 +7,10 @@ export default function TableBody({ filteredUsers }) {
     <React.Fragment>
       <tbody>
         {filteredUsers.map(user => {
-          user.department = assignRandomDepartment();
-          user.role = assignRole(user.department);
+          if (!user.department && !user.role) {
+            user.department = assignRandomDepartment();
+            user.role = assignRole(user.department);
+          }
           return (
             <tr key={user.id}>
               <User user={user} />

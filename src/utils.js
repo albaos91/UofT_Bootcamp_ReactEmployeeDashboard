@@ -41,4 +41,35 @@ const assignRole = department => {
   }
 };
 
-export { getUsers, assignRandomDepartment, assignRole };
+const searchEmployeeByName = (employeeList, targetName) => {
+  if (targetName === '') return employeeList;
+
+  return employeeList.filter(emp => {
+    if (emp.name.toLowerCase().includes(targetName.toLowerCase())) {
+      return emp;
+    }
+  });
+};
+
+const searchEmpByNameAndDepartment = (
+  employeeList,
+  targetName,
+  targetDepartment
+) => {
+  employeeList.filter(emp => {
+    if (
+      emp.department.toLowerCase() === targetDepartment.toLowerCase() &&
+      emp.name.toLowerCase().includes(targetName.toLowerCase())
+    ) {
+      return emp;
+    }
+  });
+};
+
+export {
+  getUsers,
+  assignRandomDepartment,
+  assignRole,
+  searchEmployeeByName,
+  searchEmpByNameAndDepartment
+};
