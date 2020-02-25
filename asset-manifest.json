@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/UofT_Bootcamp_ReactEmployeeDashboard/static/css/main.7ebc2073.chunk.css",
+    "main.js": "/UofT_Bootcamp_ReactEmployeeDashboard/static/js/main.ce55a7fe.chunk.js",
+    "main.js.map": "/UofT_Bootcamp_ReactEmployeeDashboard/static/js/main.ce55a7fe.chunk.js.map",
+    "runtime-main.js": "/UofT_Bootcamp_ReactEmployeeDashboard/static/js/runtime-main.84aa64b9.js",
+    "runtime-main.js.map": "/UofT_Bootcamp_ReactEmployeeDashboard/static/js/runtime-main.84aa64b9.js.map",
+    "static/js/2.0e71544a.chunk.js": "/UofT_Bootcamp_ReactEmployeeDashboard/static/js/2.0e71544a.chunk.js",
+    "static/js/2.0e71544a.chunk.js.map": "/UofT_Bootcamp_ReactEmployeeDashboard/static/js/2.0e71544a.chunk.js.map",
+    "index.html": "/UofT_Bootcamp_ReactEmployeeDashboard/index.html",
+    "precache-manifest.371144b1b742c8916e447055c3488fd0.js": "/UofT_Bootcamp_ReactEmployeeDashboard/precache-manifest.371144b1b742c8916e447055c3488fd0.js",
+    "service-worker.js": "/UofT_Bootcamp_ReactEmployeeDashboard/service-worker.js",
+    "static/css/main.7ebc2073.chunk.css.map": "/UofT_Bootcamp_ReactEmployeeDashboard/static/css/main.7ebc2073.chunk.css.map",
+    "static/js/2.0e71544a.chunk.js.LICENSE.txt": "/UofT_Bootcamp_ReactEmployeeDashboard/static/js/2.0e71544a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84aa64b9.js",
+    "static/js/2.0e71544a.chunk.js",
+    "static/css/main.7ebc2073.chunk.css",
+    "static/js/main.ce55a7fe.chunk.js"
+  ]
+}
