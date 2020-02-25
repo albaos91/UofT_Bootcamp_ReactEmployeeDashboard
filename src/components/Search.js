@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function Form(props) {
   const [name, setName] = useState();
-  const [department, setDepartment] = useState();
+  const [department, setDepartment] = useState('All');
 
   const handleInputChange = e => {
     setName(e.target.value);

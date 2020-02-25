@@ -19,15 +19,29 @@ function App() {
     setFilteredUsers(users);
   }, [users]);
 
-  const handleSearch = (name, department) => {
-    const searchResults = users.filter(user => {
-      if (
-        user.department.toLowerCase() === department.toLowerCase() &&
-        user.name.toLowerCase().includes(name.toLowerCase())
-      ) {
-        return user;
+  const searchEmployeeByName = (empList, targetName) => {
+    return empList.filter(emp => {
+      if (emp.name.toLowerCase().includes(targetName)) {
+        return emp;
       }
     });
+  };
+
+  const handleSearch = (name, department) => {
+    let searchResults = null;
+
+    if (department === 'All') {
+      searchResults = searchEmployeeByName(users, name);
+    } else {
+      searchResults = users.filter(user => {
+        if (
+          user.department.toLowerCase() === department.toLowerCase() &&
+          user.name.toLowerCase().includes(name.toLowerCase())
+        ) {
+          return user;
+        }
+      });
+    }
     setFilteredUsers(searchResults);
   };
 
