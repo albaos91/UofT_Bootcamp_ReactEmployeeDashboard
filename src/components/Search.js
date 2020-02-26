@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Form(props) {
-  const [name, setName] = useState();
+  const [name, setName] = useState('');
   const [department, setDepartment] = useState('All');
   const [searching, setSearching] = useState(false);
 
@@ -48,6 +48,7 @@ export default function Form(props) {
             placeholder='Type in a name ..'
             value={name}
             onChange={e => handleInputChange(e)}
+            required
           />
         </div>
         <div className='form-group col-md-4'>

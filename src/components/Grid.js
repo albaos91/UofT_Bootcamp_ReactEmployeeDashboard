@@ -6,7 +6,7 @@ export default function Grid(props) {
     <div className='container'>
       <div className='row'>
         {props.users.map(user => (
-          <UserCard user={user} />
+          <UserCard key={user.id} user={user} />
         ))}
       </div>
     </div>

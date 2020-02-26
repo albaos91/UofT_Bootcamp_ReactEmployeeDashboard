@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function AdvanceFilter(props) {
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState('');
   const [sortType, setSortType] = useState();
   // eslint-disable-next-line
   const [filterLabel, setFilterLabel] = useState();

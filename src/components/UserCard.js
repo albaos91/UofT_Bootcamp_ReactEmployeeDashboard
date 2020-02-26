@@ -5,7 +5,7 @@ export default function UserCard(props) {
   const { name, role, email } = props.user;
   return (
     <div className='col col-md-6 mt-5'>
-      <div className='card' style={{ maxWidth: 540 }}>
+      <div className='card user-card' style={{ maxWidth: 540 }}>
         <div className='row no-gutters'>
           <div className='col-md-4'>
             <img
