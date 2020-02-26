@@ -16,7 +16,6 @@ import {
 function App() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    console.log('I run');
     getUsers().then(users => {
       setUsers(users);
       setFilteredUsers(users);
@@ -25,7 +24,6 @@ function App() {
 
   const [filteredUsers, setFilteredUsers] = useState([]);
   useEffect(() => {
-    console.log('I run');
     setFilteredUsers(users);
   }, [users]);
 
@@ -65,8 +63,6 @@ function App() {
   };
 
   const handleFilterSelect = (filterLabel, filterType) => {
-    console.log(filterLabel);
-    console.log(filterType);
     if (filterType === 'Please Select') {
       setFilteredUsers(users);
     } else {
