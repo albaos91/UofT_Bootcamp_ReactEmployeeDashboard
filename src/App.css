@@ -2,6 +2,10 @@
   color: #666666;
 }
 
+.badge-primary {
+  background-color: #5af !important;
+}
+
 .btn-primary {
   background-color: #5af !important;
 }

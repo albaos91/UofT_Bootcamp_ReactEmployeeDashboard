@@ -1,4 +1,5 @@
 import React from 'react';
+import person from '../person.png';
 
 export default function User(props) {
   const { name, role, department, email, phone } = props.user;
@@ -8,7 +9,7 @@ export default function User(props) {
         <div className='card border-0'>
           <div className='row no-gutters'>
             <div className='col-md-4'>
-              <img src='./person.png' className='card-img' alt='...' />
+              <img src={person} className='card-img' alt='...' />
             </div>
             <div className='col-md-8'>
               <div className='card-body'>

@@ -43,7 +43,7 @@ const assignRole = department => {
 
 const searchEmployeeByName = (employeeList, targetName) => {
   if (targetName === '') return employeeList;
-
+  // eslint-disable-next-line
   return employeeList.filter(emp => {
     if (emp.name.toLowerCase().includes(targetName.toLowerCase())) {
       return emp;
@@ -56,6 +56,7 @@ const searchEmpByNameAndDepartment = (
   targetName,
   targetDepartment
 ) => {
+  // eslint-disable-next-line
   employeeList.filter(emp => {
     if (
       emp.department.toLowerCase() === targetDepartment.toLowerCase() &&

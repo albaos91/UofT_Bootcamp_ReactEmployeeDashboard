@@ -1,5 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import UserCard from './UserCard';
 
-export default function Grid() {
-  return <h1>Grid</h1>;
+export default function Grid(props) {
+  return (
+    <div className='container'>
+      <div className='row'>
+        {props.users.map(user => (
+          <UserCard user={user} />
+        ))}
+      </div>
+    </div>
+  );
 }
